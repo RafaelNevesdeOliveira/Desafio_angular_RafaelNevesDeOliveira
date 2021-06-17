@@ -1,0 +1,46 @@
+<form class="form-horizontal">
+  <div class="form-group">
+    <div class="form-group form-group row col-md">
+      <div class="col-sm-12">
+        <label for="state" class="control-label">Selecione o Estado</label>
+      </div>
+
+      <div class="col-sm-12">
+        <select (change)="provideCovidDataValues($event)">
+          <option
+            *ngFor="let data of covidData"
+            type="text"
+            class="form-control"
+            name="state"
+            id="state"
+            required
+          >
+            {{ data.state }}
+          </option>
+        </select>
+
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Estado(UF)</th>
+              <th scope="col">Casos</th>
+              <th scope="col">Suspeitos</th>
+              <th scope="col">Mortes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{realData.state}}</td>
+              <td>{{realData.cases}}</td>
+              <td>{{realData.suspects}}</td>
+              <td>{{realData.deaths}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+</form>
